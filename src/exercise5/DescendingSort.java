@@ -13,11 +13,26 @@ public class DescendingSort {
         int[] numbers = new int[numberCount];
 
         System.out.println("Enter numbers: ");
-        for (int index = 0; index < numbers.length; index++) {
+        for (int index = 0; index < numbers.length; index++) 
+        {
             numbers[index] = input.nextInt();
         }
 
-        // Sort numbers in descending order
+        for (int index = 0; index < numbers.length; index++) 
+        {
+          int minIndex = index;
+          for (int i = index + 1; i < numbers.length; i++) 
+          {
+            if (numbers[minIndex] < numbers[i]) 
+            {
+              minIndex = i;
+
+            }
+          }
+        int t = numbers[index];
+        numbers[index] = numbers[minIndex];
+        numbers[minIndex] = t;
+        }
 
         String numbersAsString = Arrays.toString(numbers);
         System.out.println("Sorted numbers: " + numbersAsString);
